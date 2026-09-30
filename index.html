@@ -877,32 +877,32 @@
     <div class="campo">
       <div class="opcoes" id="pgto-opcoes">
 
-        <div class="opcao-item" data-val="Total em Pix com 7% de desconto" onclick="selecionarOpcao(this,'pgto'); togglePix(false)">
+        <div class="opcao-item" data-val="Total em Pix com 7% de desconto" onclick="selecionarOpcao(this,'pgto')">
           <div class="opcao-radio"></div>
           <div>💐 Total em Pix com 7% de desconto</div>
         </div>
 
-        <div class="opcao-item" data-val="Parte do valor em Pix + Cartão de Crédito em até 3x sem juros" onclick="selecionarOpcao(this,'pgto'); togglePix(true)">
+        <div class="opcao-item" data-val="Parte do valor em Pix + Cartão de Crédito em até 3x sem juros" onclick="selecionarOpcao(this,'pgto')">
           <div class="opcao-radio"></div>
           <div>💐 Parte do valor em Pix + Cartão de Crédito em até 3x sem juros</div>
         </div>
 
-        <div class="opcao-item" data-val="Parte do valor em Pix + Cartão de Crédito em 4x a 12x com juros" onclick="selecionarOpcao(this,'pgto'); togglePix(true)">
+        <div class="opcao-item" data-val="Parte do valor em Pix + Cartão de Crédito em 4x a 12x com juros" onclick="selecionarOpcao(this,'pgto')">
           <div class="opcao-radio"></div>
           <div>💐 Parte do valor em Pix + Cartão de Crédito em 4x a 12x com juros</div>
         </div>
 
-        <div class="opcao-item" data-val="Total no Cartão de Crédito em até 3x sem juros" onclick="selecionarOpcao(this,'pgto'); togglePix(false)">
+        <div class="opcao-item" data-val="Total no Cartão de Crédito em até 3x sem juros" onclick="selecionarOpcao(this,'pgto')">
           <div class="opcao-radio"></div>
           <div>💐 Total no Cartão de Crédito em até 3x sem juros</div>
         </div>
 
-        <div class="opcao-item" data-val="Total no Cartão de Crédito em 4x a 12x com juros" onclick="selecionarOpcao(this,'pgto'); togglePix(false)">
+        <div class="opcao-item" data-val="Total no Cartão de Crédito em 4x a 12x com juros" onclick="selecionarOpcao(this,'pgto')">
           <div class="opcao-radio"></div>
           <div>💐 Total no Cartão de Crédito em 4x a 12x com juros</div>
         </div>
 
-        <div class="opcao-item" data-val="Plano Reserva – entrada mínima de R$300 no fechamento do contrato, restante em PIX quando e no valor que quiser, quitado até 15 dias antes do casamento" onclick="selecionarOpcao(this,'pgto'); togglePix(true)">
+        <div class="opcao-item" data-val="Plano Reserva – entrada mínima de R$300 no fechamento do contrato, restante em PIX quando e no valor que quiser, quitado até 15 dias antes do casamento" onclick="selecionarOpcao(this,'pgto')">
           <div class="opcao-radio"></div>
           <div>💐 Plano Reserva<br><span style="font-size:12px;color:var(--cinza)">Entrada mínima de R$300 + saldo livre em PIX até 15 dias antes do casamento</span></div>
         </div>
@@ -1062,14 +1062,40 @@
 
     <div class="nav">
       <button class="btn-voltar" onclick="voltar(9)">← Voltar</button>
-      <button class="btn-avancar" onclick="avancar(9)">Revisar →</button>
+      <button class="btn-avancar" onclick="avancar(9)">Avançar →</button>
     </div>
   </div>
 
   <!-- ══════════════════════════════════
-       STEP 10 — REVISÃO + ENVIO
+       STEP 10 — TERMO 6
   ══════════════════════════════════ -->
   <div class="step" id="step-10">
+    <div class="step-titulo">Antes de continuar</div>
+    <div class="step-descricao">Leia com atenção e confirme o item abaixo.</div>
+
+    <div class="ciencia-bloco">
+      <p>Estou ciente de que <strong>o custo de envio das eternizações prontas é por minha conta</strong> e que só saberei o valor quando as artes estiverem prontas, uma vez que esse orçamento depende do tamanho e peso da(s) embalagem(ns) a ser enviada(s).</p>
+      <div class="ciencia-opcoes">
+        <button class="ciencia-btn nao" id="c6-nao" onclick="ciencia(6,'nao')">Não concordo</button>
+        <button class="ciencia-btn sim" id="c6-sim" onclick="ciencia(6,'sim')">Concordo</button>
+      </div>
+      <div class="bloqueio" id="bloqueio-6">
+        <p>Para prosseguir é necessário concordar com este item. Entre em contato pelo WhatsApp para mais informações.</p>
+      </div>
+    </div>
+
+    <div class="erro-msg" id="erro-10">Por favor, responda o item acima.</div>
+
+    <div class="nav">
+      <button class="btn-voltar" onclick="voltar(10)">← Voltar</button>
+      <button class="btn-avancar" onclick="avancar(10)">Revisar →</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       STEP 11 — REVISÃO + ENVIO
+  ══════════════════════════════════ -->
+  <div class="step" id="step-11">
     <div class="step-titulo">Tudo certo?</div>
     <div class="step-descricao">Revise suas informações antes de enviar pelo WhatsApp.</div>
 
@@ -1094,7 +1120,7 @@
     </div>
 
     <div class="nav" style="margin-top:8px">
-      <button class="btn-voltar" onclick="voltar(10)">← Editar</button>
+      <button class="btn-voltar" onclick="voltar(11)">← Editar</button>
     </div>
 
     <button class="btn-enviar" onclick="enviarWhatsApp()">
@@ -1118,7 +1144,7 @@ const estado = {
   quem: '',
   iniciais: '',
   pgto: '',
-  ciencias: { 1: '', 2: '', 3: '', 4: '', 5: '' },
+  ciencias: { 1: '', 2: '', 3: '', 4: '', 5: '', 6: '' },
   pecasSelecionadas: []
 };
 
@@ -1162,6 +1188,10 @@ function selecionarOpcao(el, grupo) {
   el.classList.add('selecionado');
   estado[grupo] = el.dataset.val;
   if (grupo === 'quem') aplicarLogicaQuem(el.dataset.val);
+  if (grupo === 'pgto') {
+    const precisaPix = el.dataset.val.includes('Parte do valor em Pix') || el.dataset.val.includes('Plano Reserva');
+    togglePix(precisaPix);
+  }
 }
 
 function aplicarLogicaQuem(val) {
@@ -1227,11 +1257,10 @@ function ciencia(num, resp) {
 
 // ── PROGRESSO (10 steps) ──
 function atualizarProgress(step) {
-  const pct = (step / 10) * 100;
+  const pct = (step / 11) * 100;
   document.getElementById('progressBar').style.width = pct + '%';
-  document.getElementById('progressStep').textContent = 'Etapa ' + step + ' de 10';
-  // labels agrupados: 1=Dados, 2=Ficha, 3=Peças, 4=Pgto, 5-9=Termos, 10=Envio
-  const mapa = { 1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'5', 7:'5', 8:'5', 9:'5', 10:'6' };
+  document.getElementById('progressStep').textContent = 'Etapa ' + step + ' de 11';
+  const mapa = { 1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'5', 7:'5', 8:'5', 9:'5', 10:'5', 11:'6' };
   for (let i = 1; i <= 6; i++) {
     document.getElementById('plbl-' + i).classList.toggle('ativo', String(i) === mapa[step]);
   }
@@ -1257,8 +1286,9 @@ function avancar(step) {
   if (step === 7 && !validarTermo(3, 7)) return;
   if (step === 8 && !validarTermo(4, 8)) return;
   if (step === 9 && !validarTermo(5, 9)) return;
+  if (step === 10 && !validarTermo(6, 10)) return;
 
-  if (step === 9) preencherResumo();
+  if (step === 10) preencherResumo();
   irParaStep(step + 1);
 }
 
@@ -1444,7 +1474,8 @@ function enviarWhatsApp() {
   msg += '2. Estou ciente de que não há como recuperar o estado atual das flores que vou enviar. Elas serão trabalhadas no estado em que forem recebidas.\nResposta: Concordo\n\n';
   msg += '3. Estou ciente de que devo enviar ou levar as flores o mais rápido possível e seguir as orientações de embalagem corretamente, pois esses detalhes influenciam diretamente na qualidade em que as flores chegam ao Villare Atelier, não sendo responsabilidade do atelier.\nResposta: Concordo\n\n';
   msg += '4. Estou ciente de que o Villare Atelier não envia opções de layout para escolha, sendo esse processo totalmente da artista. Entendo que a empresa trabalha dessa forma por ser a maneira de conseguir os melhores resultados estéticos e aproveitamento das flores, uma vez que, sem esse comprometimento prévio, a construção da arte acontece juntamente com as camadas de resina.\nResposta: Concordo\n\n';
-  msg += '5. Estou ciente de que com o passar dos anos a resina envelhece, adquirindo de forma gradual e sutil um tom âmbar, e que devo respeitar os cuidados com a peça para desacelerar esse processo — ainda que inevitável.\nResposta: Concordo';
+  msg += '5. Estou ciente de que com o passar dos anos a resina envelhece, adquirindo de forma gradual e sutil um tom âmbar, e que devo respeitar os cuidados com a peça para desacelerar esse processo — ainda que inevitável.\nResposta: Concordo\n\n';
+  msg += '6. Estou ciente de que o custo de envio das eternizações prontas é por minha conta e que só saberei o valor quando as artes estiverem prontas, uma vez que esse orçamento depende do tamanho e peso da(s) embalagem(ns) a ser enviada(s).\nResposta: Concordo';
 
   const seuNumero = '5512991076545';
   const url = 'https://wa.me/' + seuNumero + '?text=' + encodeURIComponent(msg);
